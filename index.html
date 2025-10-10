@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Fernando Ruiz | Software Engineer Resume</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1e40af', // Blue 700
+                        'secondary': '#374151', // Gray 700
+                        'text-light': '#f9fafb', // Gray 50
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for resume lines and links */
+        .resume-section h2 {
+            border-bottom: 2px solid #1e40af; /* primary blue */
+            padding-bottom: 0.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+        .project-title {
+            color: #1e40af; /* primary blue */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans p-4 md:p-8 lg:p-12">
+
+    <!-- Resume Container (Max width for a clean look) -->
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
+
+        <!-- Header Section (Name and Contact) -->
+        <header class="bg-gray-900 text-text-light p-6 text-center rounded-t-lg">
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-1">JUAN FERNANDO RUIZ</h1>
+            <p class="text-sm sm:text-base font-light">
+                Cypress, TX 77433 | (832) 562-8168 | 
+                <a href="mailto:juanfer33198@gmail.com" class="hover:text-primary transition duration-300">juanfer33198@gmail.com</a> | 
+                <a href="https://github.com/JuRuiz031" target="_blank" class="hover:text-primary transition duration-300">Github: JuRuiz031</a>
+            </p>
+        </header>
+
+        <main class="p-6 sm:p-8">
+            
+            <!-- Professional Summary -->
+            <section class="resume-section mb-6">
+                <h2 class="text-xl text-primary">PROFESSIONAL SUMMARY</h2>
+                <p class="text-sm sm:text-base text-gray-700">
+                    Highly motivated and results-oriented Computer Science graduate seeking a **Software Engineering** opportunity. Eager to apply academic knowledge to real-world projects, collaborate effectively, and contribute positively to a team environment.
+                </p>
+            </section>
+
+            <!-- Education -->
+            <section class="resume-section mb-6">
+                <h2 class="text-xl text-primary">EDUCATION</h2>
+                <div class="flex justify-between items-start text-sm sm:text-base">
+                    <div>
+                        <h3 class="font-semibold text-secondary">UNIVERSITY OF MASSACHUSETTS LOWELL</h3>
+                        <p class="text-gray-600">B.S. in Computer Science</p>
+                    </div>
+                    <p class="font-medium text-gray-700 whitespace-nowrap">Graduation: August 2025</p>
+                </div>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="resume-section mb-6">
+                <h2 class="text-xl text-primary">TECHNICAL SKILLS</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-6 text-sm">
+                    <div class="font-semibold text-gray-800">Programming Languages:</div>
+                    <div class="text-gray-600">C, C++, Python, basic JavaScript, Java</div>
+                    
+                    <div class="font-semibold text-gray-800">Core Concepts:</div>
+                    <div class="text-gray-600">OOP, Data Structures, Algorithms, SWE Principles, Continuous Deployment (CD)</div>
+
+                    <div class="font-semibold text-gray-800">Data Structures:</div>
+                    <div class="text-gray-600">Trees (BST), Vectors, Heaps, Maps, Stacks, Queues, Linked Lists</div>
+
+                    <div class="font-semibold text-gray-800">Tools/Libraries:</div>
+                    <div class="text-gray-600">Godot Engine, SFML Library, Flet, Regular Expressions (RegEx)</div>
+                </div>
+            </section>
+
+            <!-- Selected Projects -->
+            <section class="resume-section mb-6">
+                <h2 class="text-xl text-primary">SELECTED PROJECTS</h2>
+
+                <!-- Project 1: Contact Harmony -->
+                <div class="mb-4">
+                    <h3 class="project-title flex justify-between items-start">
+                        <span>Contact Harmony <span class="text-sm font-normal text-gray-500">(Python, Flet)</span></span>
+                        <a href="#" class="text-sm font-normal text-primary hover:underline ml-2 hidden sm:inline">View GitHub</a>
+                    </h3>
+                    <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1">
+                        <li>**Developed** a group application to locally save and back up contacts from Google and Yahoo for enhanced privacy and security.</li>
+                        <li>**Implemented** a VCF parser and integrated encryption for application passwords to protect user data.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2: Evil Hangman -->
+                <div class="mb-4">
+                    <h3 class="project-title">Evil Hangman <span class="text-sm font-normal text-gray-500">(C)</span></h3>
+                    <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1">
+                        <li>**Designed** an "Evil Hangman" game using **Opaque Object design** and **Binary Search Tree (BST)** algorithms to dynamically change the secret word, maximizing difficulty without player knowledge.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3: Regular Expressions Log Analyzer -->
+                <div class="mb-4">
+                    <h3 class="project-title">Regular Expressions Log Analyzer <span class="text-sm font-normal text-gray-500">(C++)</span></h3>
+                    <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1">
+                        <li>**Created** a log analyzer to sift through critical data from large files using **Regular Expressions (RegEx)**.</li>
+                        <li>**Modeled** the application to check industrial machine logs (InTouch) to identify bugs and ensure product functionality.</li>
+                    </ul>
+                </div>
+                
+                <!-- Project 4: Factorbs -->
+                <div class="mb-4">
+                    <h3 class="project-title">Factorbs <span class="text-sm font-normal text-gray-500">(Godot Game Engine)</span></h3>
+                    <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1">
+                        <li>**Contributed** to a group educational prototype game, following Common Core standards, designed to teach young children early factoring.</li>
+                        <li>**Built** core game functionality including save functions, menus, and pause mechanisms.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 5: Pythagoras Tree Generator -->
+                <div class="mb-4">
+                    <h3 class="project-title">Pythagoras Tree Generator <span class="text-sm font-normal text-gray-500">(C++, SFML)</span></h3>
+                    <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1">
+                        <li>**Utilized** the open-source **SFML library** to develop an application that draws recursive rectangular trees (fractals).</li>
+                        <li>**Managed** API calls and frameworks to render a window and generate the fractal based on user-inputted parameters.</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- Relevant Coursework -->
+            <section class="resume-section">
+                <h2 class="text-xl text-primary">RELEVANT COURSEWORK</h2>
+                <div class="text-sm text-gray-700 leading-relaxed">
+                    **Software Engineering I & II** (Continuous Deployment, SWE Principles, Agile/Scrum) &bull; **Analysis of Algorithms** (Data Abstraction, Time/Space Complexity) &bull; **Operating Systems** (Asynchronous Programming, Concurrency, Memory Management) &bull; **Computing I-IV** (Advanced C, C++ Data Structures, OOP).
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
