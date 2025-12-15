@@ -6,6 +6,6 @@ This repository contains a single-page resume (`index.html`) styled with Tailwin
 
 Contact
 
-Email: juаnfer33198@gmail.com
+Email: juan@fer-ruiz.dev
 Phone Number: 832-562-8168
 
