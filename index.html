@@ -35,6 +35,120 @@
             color: #1e40af; /* primary blue */
             font-weight: 600;
         }
+
+        /* Print-specific styles for PDF export */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0.35in 0.45in 0.25in 0.45in; /* top right bottom left - smaller bottom */
+            }
+            
+            body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            
+            .max-w-4xl {
+                max-width: 100% !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                padding-bottom: 0 !important;
+            }
+            
+            header {
+                padding: 0.62rem 0.92rem !important;
+                border-radius: 0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            header h1 {
+                font-size: 1.42rem !important;
+                margin-bottom: 0.21rem !important;
+            }
+            
+            header p {
+                font-size: 0.71rem !important;
+            }
+            
+            main {
+                padding: 0.88rem 0.88rem 0.5rem 0.88rem !important; /* smaller bottom padding */
+            }
+            
+            .resume-section {
+                margin-bottom: 0.62rem !important;
+                page-break-inside: avoid;
+            }
+            
+            .resume-section:last-child {
+                margin-bottom: 0 !important; /* no margin on last section */
+            }
+            
+            .resume-section h2 {
+                font-size: 0.96rem !important;
+                margin-bottom: 0.36rem !important;
+                padding-bottom: 0.13rem !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .resume-section p,
+            .resume-section div,
+            .resume-section ul {
+                font-size: 0.70rem !important;
+                line-height: 1.28 !important;
+            }
+            
+            .resume-section ul {
+                margin-top: 0.16rem !important;
+                margin-bottom: 0.16rem !important;
+            }
+            
+            .resume-section li {
+                margin-bottom: 0.13rem !important;
+            }
+            
+            .project-title {
+                font-size: 0.73rem !important;
+                margin-bottom: 0.16rem !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .grid {
+                gap: 0.21rem 0.92rem !important;
+            }
+            
+            /* Keep links visible but compact in print */
+            a {
+                text-decoration: none !important;
+                color: inherit !important;
+            }
+            
+            /* Hide GitHub repo links on small projects to save space */
+            .hidden.sm\\:inline {
+                display: none !important;
+            }
+            
+            .mb-4 {
+                margin-bottom: 0.42rem !important;
+            }
+            
+            .mb-6 {
+                margin-bottom: 0.62rem !important;
+            }
+            
+            .mb-3 {
+                margin-bottom: 0.26rem !important;
+            }
+            
+            /* Ensure colors print */
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans p-4 md:p-8 lg:p-12">
@@ -58,7 +172,7 @@
             <section class="resume-section mb-6">
                 <h2 class="text-xl text-primary">PROFESSIONAL SUMMARY</h2>
                 <p class="text-sm sm:text-base text-gray-700">
-                    Computer Science graduate with solid foundations in algorithms, data structures, and systems design, seeking an entry-level <strong>Software Development</strong> role. Focused on building reliable, maintainable software. Adept at solving ambiguous problems end-to-end, writing testable code, and collaborating with cross-functional teams to deliver production-quality features.
+                    Full Stack Java Developer and UMass Lowell Computer Science graduate with professional experience in Java EE, Spring Boot, and Angular. Specialized in building reliable, testable software; From architecting secure REST APIs with JWT and Spring Security to designing responsive frontends. Adept at solving ambiguous problems end-to-end, writing clean code, and collaborating with cross-functional teams to deliver production-quality features.
                 </p>
             </section>
 
@@ -73,21 +187,49 @@
                 </div>
             </section>
 
+            <!-- Work Experience -->
+            <section class="resume-section mb-6">
+                <h2 class="text-xl text-primary">WORK EXPERIENCE</h2>
+                <div class="mb-3">
+                    <div class="flex justify-between items-start text-sm sm:text-base">
+                        <div>
+                            <h3 class="font-semibold text-secondary">Full Stack Java Developer</h3>
+                            <p class="text-gray-600">Revature</p>
+                        </div>
+                        <div class="text-right text-gray-600 text-sm">
+                            <p>December 2025 - Present</p>
+                            <p class="text-xs">Plano, TX</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1 mt-2">
+                        <li><strong>Building</strong> enterprise full-stack applications using Spring Boot, Angular, PostgreSQL, and AWS cloud services.</li>
+                        <li><strong>Implementing</strong> microservices architecture, RESTful API design, containerization with Docker, and CI/CD pipelines.</li>
+                        <li><strong>Collaborating</strong> in Agile/Scrum ceremonies and delivering hands-on projects simulating real-world enterprise development scenarios.</li>
+                    </ul>
+                </div>
+            </section>
+
             <!-- Technical Skills -->
             <section class="resume-section mb-6">
                 <h2 class="text-xl text-primary">TECHNICAL SKILLS</h2>
                 <div class="grid grid-cols-[auto,1fr] gap-y-2 gap-x-6 text-sm">
                     <div class="font-semibold text-gray-800">Programming Languages:</div>
-                    <div class="text-gray-600">C, C++, Python, basic JavaScript, Java</div>
+                    <div class="text-gray-600">Java, Python, JavaScript, TypeScript, C++, C</div>
                     
                     <div class="font-semibold text-gray-800">Core Concepts:</div>
-                    <div class="text-gray-600">OOP, Data Structures, Algorithms, SWE Principles, Continuous Deployment (CD)</div>
+                    <div class="text-gray-600">SWE Principles, Agile Methodology, OOP, Algorithms, Data Structures, Continuous Deployment (CD)</div>
 
                     <div class="font-semibold text-gray-800">Data Structures:</div>
-                    <div class="text-gray-600">Trees (BST), Vectors, Heaps, Maps, Stacks, Queues, Linked Lists</div>
+                    <div class="text-gray-600">Maps, Trees (BST), Heaps, Stacks, Queues, Linked Lists, Vectors</div>
 
-                    <div class="font-semibold text-gray-800">Tools/Libraries:</div>
-                    <div class="text-gray-600">Godot Engine, SFML Library, Flet, Regular Expressions (RegEx)</div>
+                    <div class="font-semibold text-gray-800">Databases:</div>
+                    <div class="text-gray-600">PostgreSQL, MongoDB, SQL</div>
+
+                    <div class="font-semibold text-gray-800">Frameworks/Tools:</div>
+                    <div class="text-gray-600">Spring Boot, Angular, Maven, Git, Docker, AWS, JUnit, Mockito, Karma, Jasmine</div>
+                    
+                    <div class="font-semibold text-gray-800">Libraries:</div>
+                    <div class="text-gray-600">JDBC, Flet, Regular Expressions (RegEx), SFML, Godot Engine</div>
                 </div>
             </section>
 
@@ -95,15 +237,16 @@
             <section class="resume-section mb-6">
                 <h2 class="text-xl text-primary">SELECTED PROJECTS</h2>
 
-                <!-- Project 1: Contact Harmony -->
+                <!-- Project 1: CalendarIO -->
                 <div class="mb-4">
                     <h3 class="project-title flex justify-between items-start">
-                        <span>Contact Harmony <span class="text-sm font-normal text-gray-500">(Python, Flet)</span></span>
-                        <a href="https://github.com/ContactHarmony/ContactHarmony" target="_blank" class="text-sm font-normal text-primary hover:underline ml-2 hidden sm:inline">View GitHub Repository</a>
+                        <span>CalendarIO - Full Stack Calendar Application <span class="text-sm font-normal text-gray-500">(Angular, Spring Boot, Java, MongoDB)</span></span>
+                        <a href="https://github.com/JuRuiz031/Project1" target="_blank" class="text-sm font-normal text-primary hover:underline ml-2 hidden sm:inline">View GitHub Repository</a>
                     </h3>
                     <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1">
-                        <li><strong>Developed</strong> a group application to locally save and back up contacts from Google and Yahoo for enhanced privacy and security.</li>
-                        <li><strong>Implemented</strong> a VCF parser and integrated encryption for application passwords to protect user data.</li>
+                        <li><strong>Developed</strong> a full-stack single-page calendar application with secure JWT authentication (Spring Security) enabling private schedule management, event polling, and group coordination.</li>
+                        <li><strong>Architected</strong> RESTful APIs using Spring Boot with NoSQL MongoDB backend and Angular frontend service layer, implementing CRUD operations and real-time schedule sharing.</li>
+                        <li><strong>Ensured</strong> code reliability through comprehensive unit testing using JUnit and Mockito (backend) and Karma/Jasmine (frontend).</li>
                     </ul>
                 </div>
 
@@ -118,42 +261,31 @@
                     </ul>
                 </div>
 
-                <!-- Project 3: Regular Expressions Log Analyzer -->
+                <!-- Project 3: Contact Harmony -->
                 <div class="mb-4">
                     <h3 class="project-title flex justify-between items-start">
-                        <span>Regular Expressions Log Analyzer <span class="text-sm font-normal text-gray-500">(C++)</span></span>
-                        <a href="https://github.com/JuRuiz031/RegEx" target="_blank" class="text-sm font-normal text-primary hover:underline ml-2 hidden sm:inline">View GitHub Repository</a>
+                        <span>Contact Harmony <span class="text-sm font-normal text-gray-500">(Python, Flet)</span></span>
+                        <a href="https://github.com/ContactHarmony/ContactHarmony" target="_blank" class="text-sm font-normal text-primary hover:underline ml-2 hidden sm:inline">View GitHub Repository</a>
                     </h3>
                     <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1">
-                        <li><strong>Created</strong> a log analyzer to sift through critical data from large files using <strong>Regular Expressions (RegEx)</strong>.</li>
-                        <li><strong>Modeled</strong> the application to check industrial machine logs (InTouch) to identify bugs and ensure product functionality.</li>
+                        <li><strong>Developed</strong> a group application to locally save and back up contacts from Google and Yahoo for enhanced privacy and security.</li>
+                        <li><strong>Implemented</strong> a VCF parser and integrated encryption for application passwords to protect user data.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 4: JBank -->
+                <div class="mb-4">
+                    <h3 class="project-title flex justify-between items-start">
+                        <span>JBank - CLI Banking System <span class="text-sm font-normal text-gray-500">(Java, PostgreSQL, JDBC, Docker)</span></span>
+                        <a href="https://github.com/JuRuiz031/jbank" target="_blank" class="text-sm font-normal text-primary hover:underline ml-2 hidden sm:inline">View GitHub Repository</a>
+                    </h3>
+                    <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1">
+                        <li><strong>Engineered</strong> a full-featured CLI banking application using 3-Layer Architecture (Repository, Service, Controller) with PostgreSQL database for secure financial transactions, account management, and automated interest calculations.</li>
+                        <li><strong>Implemented</strong> raw SQL execution via JDBC prepared statements, containerized PostgreSQL using Docker, and applied input validation with comprehensive exception handling to ensure data integrity.</li>
+                        <li><strong>Established</strong> robust testing and logging infrastructure using JUnit, Mockito, and Logback for transaction auditing and debugging.</li>
                     </ul>
                 </div>
                 
-                <!-- Project 4: Factorbs -->
-                <div class="mb-4">
-                    <h3 class="project-title flex justify-between items-start">
-                        <span>Factorbs <span class="text-sm font-normal text-gray-500">(Godot Game Engine)</span></span>
-                        <a href="https://github.com/SE1-2024-group6/swe1-FACTORBS" target="_blank" class="text-sm font-normal text-primary hover:underline ml-2 hidden sm:inline">View GitHub Repository</a>
-                    </h3>
-                    <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1">
-                        <li><strong>Contributed</strong> to a group educational prototype game, following Common Core standards, designed to teach young children early factoring.</li>
-                        <li><strong>Built</strong> core game functionality including save functions, menus, and pause mechanisms. Also designed its respective website to enhance user engagement and provide additional resources: <a href="https://juruiz031.github.io/swe1/" target="_blank" class="text-sm font-normal text-primary hover:underline">Factorbs, Educational Game Prototype</a></li>
-                    </ul>
-                </div>
-
-                <!-- Project 5: Pythagoras Tree Generator -->
-                <div class="mb-4">
-                    <h3 class="project-title flex justify-between items-start">
-                        <span>Pythagoras Tree Generator <span class="text-sm font-normal text-gray-500">(C++, SFML)</span></span>
-                        <a href="https://github.com/JuRuiz031/RecursionTree" target="_blank" class="text-sm font-normal text-primary hover:underline ml-2 hidden sm:inline">View GitHub Repository</a>
-                    </h3>
-                    <ul class="list-disc ml-5 text-gray-700 text-sm space-y-1">
-                        <li><strong>Utilized</strong> the open-source <strong>SFML library</strong> to develop an application that draws recursive rectangular trees (fractals).</li>
-                        <li><strong>Managed</strong> API calls and frameworks to render a window and generate the fractal based on user-inputted parameters.</li>
-                    </ul>
-                </div>
-
             </section>
 
             <!-- Relevant Coursework -->
